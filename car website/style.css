@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    height: 100vh;
+    font-family: 'Roboto';
+}
+header{
+    height: 60px;
+    padding: 10px;
+    background: #302f2fa6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+}
+li{
+    list-style: none;
+    display: inline-block ;
+    padding: 25px;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+section{
+    flex-direction: column;
+    height: calc(100vh- 80px);
+    padding-top: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+.image1{
+    background-image: url(car.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.image2{
+    background-image: url(car\ white.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.image3{
+    background-image: url(car3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+   
+}
+.image4{
+    background-image: url(image4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.image5{
+    background-image: url(image5.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+h2{
+    margin-top: -800px;
+    margin-left: -1500px;
+    position: absolute;
+}
+p{
+    position: absolute;
+    margin-top: -375px;
+    margin-left: -780px;
+    font-size: 18px;
+}
+footer{
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+}
