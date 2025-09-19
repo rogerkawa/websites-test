@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    background: #0f1724;
+}
+/*pulsação*/
+.pulse{
+    font-size: clamp(28px,6vw,72px);
+    font-weight: 800;
+    background: linear-gradient(90deg,#7c3aed,
+    #06b6d4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 6px 20px rgba(0,0,0,0.55);
+    animation: pulse 1.2s ease-in-out infinite alternate;
+    width: 400px;
+    text-align: center;
+    position: relative;
+    left: 100px;
+    top: -100px;
+}
+
+@keyframes pulse{
+    from {transform: scale(1); opacity: 0.95;}
+    to {transform: scale(1.15); opacity: 1;}
+}
+/*menu*/
+#menu-toggle{
+    display: none;
+
+}
+.menu-btn{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 1002;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.menu-btn span{
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: #fff;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+.slide-menu{
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #1a2041;
+    color: #fff;
+    transition: left 0.3s ease;
+    padding-top: 60px;
+    z-index: 1001;
+}
+.slide-menu ul, li{
+    padding: 15px 20px;
+    list-style: none;
+}
+.slide-menu ul,li:hover{
+    background: #1a2041;
+    cursor: pointer;
+}
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+#menu-toggle:checked ~ .slide-menu{
+    left: 0;
+}
+#menu-toggle:checked ~ .overlay{
+    opacity: 1;
+    pointer-events: auto;
+}
+#menu-toggle:checked + .menu-btn span:nth-child(1){
+    transform: rotate(45deg) translateY(13px);
+    background: #fff;
+}
+#menu-toggle:checked + .menu-btn span:nth-child(2){
+    opacity: 0;
+}
+#menu-toggle:checked + .menu-btn span:nth-child(3){
+    transform: rotate(-45deg) translateY(-13px);
+    background: #fff;
+}
+/*Perguntas frequentes*/
+.faq{
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    top: 450px;
+    left: -200px;
+}
+h2{
+    text-align: center;
+    margin-bottom: 20px;
+    color: #949292bd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+details{
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+details[open]{
+    border-color: #4a6cf7;
+    box-shadow: 0 0 6px rgba(74,108,247,0.3);
+}
+summary{
+    cursor: pointer;
+    font-weight: bold;
+    list-style: none;
+}
+p{
+    margin: 8px 0 0;
+    color: #555;
+    line-height: 1.4;
+}
